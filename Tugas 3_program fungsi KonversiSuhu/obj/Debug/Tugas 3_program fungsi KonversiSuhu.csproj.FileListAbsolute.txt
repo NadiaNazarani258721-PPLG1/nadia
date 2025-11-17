@@ -1,0 +1,7 @@
+C:\Nadia Nazarani X PPLG 1\Tugas 3_program fungsi KonversiSuhu\Tugas 3_program fungsi KonversiSuhu\bin\Debug\Tugas 3_program fungsi KonversiSuhu.exe.config
+C:\Nadia Nazarani X PPLG 1\Tugas 3_program fungsi KonversiSuhu\Tugas 3_program fungsi KonversiSuhu\bin\Debug\Tugas 3_program fungsi KonversiSuhu.exe
+C:\Nadia Nazarani X PPLG 1\Tugas 3_program fungsi KonversiSuhu\Tugas 3_program fungsi KonversiSuhu\bin\Debug\Tugas 3_program fungsi KonversiSuhu.pdb
+C:\Nadia Nazarani X PPLG 1\Tugas 3_program fungsi KonversiSuhu\Tugas 3_program fungsi KonversiSuhu\obj\Debug\Tugas 3_program fungsi KonversiSuhu.csproj.AssemblyReference.cache
+C:\Nadia Nazarani X PPLG 1\Tugas 3_program fungsi KonversiSuhu\Tugas 3_program fungsi KonversiSuhu\obj\Debug\Tugas 3_program fungsi KonversiSuhu.csproj.CoreCompileInputs.cache
+C:\Nadia Nazarani X PPLG 1\Tugas 3_program fungsi KonversiSuhu\Tugas 3_program fungsi KonversiSuhu\obj\Debug\Tugas 3_program fungsi KonversiSuhu.exe
+C:\Nadia Nazarani X PPLG 1\Tugas 3_program fungsi KonversiSuhu\Tugas 3_program fungsi KonversiSuhu\obj\Debug\Tugas 3_program fungsi KonversiSuhu.pdb
