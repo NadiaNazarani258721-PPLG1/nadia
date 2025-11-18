@@ -1,0 +1,7 @@
+C:\Nadia Nazarani X PPLG 1\Tugas 3-switch case_nadia nazarani_X PPLG 1\Tugas 3-switch case_nadia nazarani_X PPLG 1\bin\Debug\Tugas 3-switch case_nadia nazarani_X PPLG 1.exe.config
+C:\Nadia Nazarani X PPLG 1\Tugas 3-switch case_nadia nazarani_X PPLG 1\Tugas 3-switch case_nadia nazarani_X PPLG 1\bin\Debug\Tugas 3-switch case_nadia nazarani_X PPLG 1.exe
+C:\Nadia Nazarani X PPLG 1\Tugas 3-switch case_nadia nazarani_X PPLG 1\Tugas 3-switch case_nadia nazarani_X PPLG 1\bin\Debug\Tugas 3-switch case_nadia nazarani_X PPLG 1.pdb
+C:\Nadia Nazarani X PPLG 1\Tugas 3-switch case_nadia nazarani_X PPLG 1\Tugas 3-switch case_nadia nazarani_X PPLG 1\obj\Debug\Tugas 3-switch case_nadia nazarani_X PPLG 1.csproj.AssemblyReference.cache
+C:\Nadia Nazarani X PPLG 1\Tugas 3-switch case_nadia nazarani_X PPLG 1\Tugas 3-switch case_nadia nazarani_X PPLG 1\obj\Debug\Tugas 3-switch case_nadia nazarani_X PPLG 1.csproj.CoreCompileInputs.cache
+C:\Nadia Nazarani X PPLG 1\Tugas 3-switch case_nadia nazarani_X PPLG 1\Tugas 3-switch case_nadia nazarani_X PPLG 1\obj\Debug\Tugas 3-switch case_nadia nazarani_X PPLG 1.exe
+C:\Nadia Nazarani X PPLG 1\Tugas 3-switch case_nadia nazarani_X PPLG 1\Tugas 3-switch case_nadia nazarani_X PPLG 1\obj\Debug\Tugas 3-switch case_nadia nazarani_X PPLG 1.pdb

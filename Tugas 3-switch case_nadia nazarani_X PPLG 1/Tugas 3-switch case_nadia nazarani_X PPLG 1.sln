@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36511.14 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tugas 3-switch case_nadia nazarani_X PPLG 1", "Tugas 3-switch case_nadia nazarani_X PPLG 1\Tugas 3-switch case_nadia nazarani_X PPLG 1.csproj", "{4631193D-3873-4D4E-89E1-E75D92063B38}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4631193D-3873-4D4E-89E1-E75D92063B38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4631193D-3873-4D4E-89E1-E75D92063B38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4631193D-3873-4D4E-89E1-E75D92063B38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4631193D-3873-4D4E-89E1-E75D92063B38}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6A1205D5-5418-4197-995E-56FD8D2F1896}
+	EndGlobalSection
+EndGlobal
