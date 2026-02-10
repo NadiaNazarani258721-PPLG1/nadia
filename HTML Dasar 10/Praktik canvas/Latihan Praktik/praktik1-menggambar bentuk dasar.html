@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktik 1 Canvas</title>
+</head>
+<body>
+    <h1>Halaman HTML dengan Canvas berisi : </h1>
+    <ul>
+        <li>Satu persegi bewarna.</li>
+        <li>Satu lingkaran di tengah.</li>
+        <li>Satu garis.</li>
+    </ul>
+    <canvas id="myCanvas" width="400" height="400" style="background-color: white; border: 2px solid black;">
+    </canvas>
+
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+
+        // Menggambar Persegi
+        ctx.fillStyle = "red";
+        ctx.fillRect(20, 20, 100, 100); 
+
+        // Menggambar Garis Diagonal 
+        ctx.beginPath();
+        ctx.moveTo(0, 0);       
+        ctx.lineTo(400, 400);   
+        ctx.stroke();
+
+       // Menggambar lingkaran 
+        ctx.beginPath();
+        ctx.arc(200, 200, 50, 0, 2 * Math.PI);
+        ctx.fillStyle = "green";
+        ctx.fill();
+        ctx.stroke();
+    </script>
+
+</body>
+</html>

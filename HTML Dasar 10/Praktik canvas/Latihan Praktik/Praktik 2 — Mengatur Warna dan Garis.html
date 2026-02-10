@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktik 2 Canvas</title>
+</head>
+<body>
+    <h1>3 bentuk (lingkaran, persegi, garis) dengan warna yang berbeda. Setiap bentuk harus memiliki ketebalan garis yang berbeda.</h1>
+
+    <canvas id="canvasPraktik2" width="500" height="300" style="background-color: white; border: 1px solid #000;"></canvas>
+
+    <script>
+        var canvas = document.getElementById('canvasPraktik2');
+        var ctx = canvas.getContext('2d');
+
+        // Persegi
+        ctx.strokeStyle = "blue";    
+        ctx.lineWidth = 2;           
+        ctx.strokeRect(50, 50, 80, 80);
+
+        // Lingkaran
+        ctx.beginPath();
+        ctx.arc(250, 90, 50, 0, 2 * Math.PI);
+        ctx.strokeStyle = "red";     
+        ctx.lineWidth = 8;           
+        ctx.stroke();
+
+        // Garis
+        ctx.beginPath();
+        ctx.moveTo(350, 90);
+        ctx.lineTo(450, 90);
+        ctx.strokeStyle = "green";   
+        ctx.lineWidth = 20;          
+        ctx.lineCap = "round";       
+        ctx.stroke();
+    </script>
+</body>
+</html>

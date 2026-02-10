@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>audio</title>
+</head>
+<body>
+    <audio id="myAudio" src="lagu tulus.mp3" controls></audio>
+        <br>
+        <button onclick="playVideo()">Play</button>
+        <button onclick="pauseVideo()">Pause</button>
+        <button oncanplay="stopVideo()">Stop</button>
+
+        <script>
+            function playAudio() {
+                document.getElementById("myAudio").play();
+            }
+            function pauseAudio() {
+                document.getElementById("myAudio").pause();
+            }
+            function stopAudio(){
+                const audio=document.getElementById("myAudio");
+                audio.pause();
+                audio.currentTime = 0;
+            }
+        </script>
+</body>
+</html>
