@@ -1,0 +1,25 @@
+/* Style for the eksternal CSS file */
+body{
+        background-color: white;
+        margin:auto
+    }
+/* Selektor Tag */
+p   {
+    border: 5px solid black;
+    color: black;
+    }
+/* Selektor Kelas */
+.MenjadiAkar{
+    border: 5px solid black;
+    background-color: beige;
+            }
+/* Selektor ID */
+#LabirinIngatan{
+    border: 5px solid black;
+    background-color: blanchedalmond;
+                }
+/* Selektor Universal */
+* input[type="text"] {
+    border: 5px solid black;
+   background-color: antiquewhite;
+}
