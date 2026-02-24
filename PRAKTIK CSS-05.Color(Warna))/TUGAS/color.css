@@ -1,0 +1,30 @@
+.nama-warna {
+    background-color: #FFB7C5;
+    color: DeepPink;
+    padding: 10px;
+    margin: 5px;
+}
+.warna-rgb {
+    background-color: #B85C5C;
+    color: rgb(255, 0, 0);
+    padding: 10px;
+    margin: 5px;
+}
+.warna-rgba {
+    background-color: #ADD8E6;
+    color: rgba(0, 0, 255, 0.5);
+    padding: 10px;
+    margin: 5px;
+}
+.warna-hsl {
+    background-color: #98FB98;
+    color: hsl(120, 100%, 25%);
+    padding: 10px;
+    margin: 5px;
+}
+.warna-hsla {
+    background-color: #4B0082;
+    color: hsla(280, 100%, 50%, 0.7);
+    padding: 10px;
+    margin: 5px;
+}
