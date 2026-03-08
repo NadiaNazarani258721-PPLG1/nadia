@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 40px;
+    background-color: white;
+}    
+.h1-judul {
+        font-size: 32px;
+        color: gray;
+        text-align: center;
+}
+.p-paragraf {
+        font-size: 12pt;
+        line-height: 1.5;
+        color: purple;
+}
+.box-cm {
+            width: 10cm;
+            height: 5cm;
+            background-color: blue;
+            color: white;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid blue;
+}
+.box-per {
+            width: 80%;
+            height: 100px;
+            background-color: red;
+            color: white;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid red;
+}
