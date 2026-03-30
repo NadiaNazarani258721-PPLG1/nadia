@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Overflow</title>
+    <style>
+        body {
+            background-color: #fff0f5;
+            font-family: sans-serif;
+            padding: 20px;
+            color: #333;
+        }
+
+        h1 {
+            color: #db7093;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .box {
+            background-color: #ffc0cb; 
+            width: 200px;
+            height: 100px;
+            border: 2px solid #ffb6c1;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        h2 {
+            font-size: 16px;
+            margin-top: 0;
+        }
+
+        .visible { 
+            overflow: visible;
+        }
+
+        .hidden { 
+            overflow: hidden; 
+        }
+
+        .scroll { 
+            overflow: scroll; 
+        }
+
+        .auto { 
+            overflow: auto; 
+        }
+
+    </style>
+</head>
+<body>
+    <h1>MACAM MACAM OVERFLOW</h1>
+
+    <div style="background: white; padding: 10px; border-radius: 10px; margin-bottom: 20px;">
+        <h3>Buatlah halaman web yang berisi:</h3>
+        <ul>
+            <li>Berisi tulisan jumlah minimal 50 kata dengan display overflow: visible.</li>
+            <li>Berisi tulisan jumlah minimal 50 kata dengan display overflow: hidden.</li>
+            <li>Berisi tulisan jumlah minimal 50 kata dengan display overflow: scroll.</li>
+            <li>Berisi tulisan jumlah minimal 50 kata dengan display overflow: auto.</li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="box visible">
+            <h2>Overflow: Visible</h2>
+            <p>Pada bagian ini, kita menggunakan nilai visible. Ini adalah nilai default. Teks yang sangat panjang ini 
+                sengaja dibuat lebih dari lima puluh kata untuk menunjukkan bahwa konten akan keluar dari batas kotak 
+                tanpa terpotong atau tersembunyi. Hal ini seringkali membuat tampilan terlihat berantakan jika tidak 
+                diatur dengan hati-hati dalam desain layout web yang sebenarnya.</p>
+        </div>
+
+        <div class="box hidden">
+            <h2>Overflow: Hidden</h2>
+            <p>Pada bagian kedua ini, kita menerapkan nilai hidden. Meskipun teks ini memiliki panjang lebih dari 
+                lima puluh kata, bagian yang melebihi ukuran kotak seratus lima puluh piksel akan langsung dipotong. 
+                Pengguna tidak akan bisa melihat sisa teks yang hilang karena tidak ada fitur gulir atau scroll yang 
+                disediakan oleh browser untuk bagian ini.</p>
+        </div>
+
+        <div class="box scroll">
+            <h2>Overflow: Scroll</h2>
+            <p>Bagian ketiga menggunakan nilai scroll. Di sini, sistem akan selalu menampilkan batang gulir atau scrollbar 
+                baik di sisi vertikal maupun horizontal, terlepas dari apakah teksnya cukup panjang atau tidak. Teks ini 
+                memiliki lebih dari lima puluh kata sehingga kita bisa menggeser konten ke bawah untuk membaca seluruh 
+                informasi yang tersedia di dalam kotak terbatas ini.</p>
+        </div>
+
+        <div class="box auto">
+            <h2>Overflow: Auto</h2>
+            <p>Terakhir adalah nilai auto. Ini adalah pilihan yang sangat cerdas karena browser hanya akan menampilkan 
+                batang gulir jika kontennya memang benar-benar melebihi kapasitas kotak. Karena teks ini memiliki total 
+                minimal lima puluh kata dan meluap dari batas tinggi kotak, maka scrollbar akan muncul secara otomatis 
+                untuk memudahkan navigasi pembaca tanpa merusak estetika desain.</p>
+        </div>
+    </div>
+</body>
+</html>
