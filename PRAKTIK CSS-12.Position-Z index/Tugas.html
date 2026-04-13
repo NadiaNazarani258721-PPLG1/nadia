@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .satu {
+            top: 200px;
+            left: 200px;
+            z-index: 3;
+        }
+        .dua {
+            top: 100px;
+            left: 100px;
+            z-index: 2;
+        }
+        .tiga {
+           top: 0;
+           left: 0;
+           z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="satu">
+        <img src="gunung1.jpg" alt="Gambar1">
+    </div>
+    <div class="dua">
+        <img src="gunung2.jpg" alt="Gambar2">
+    </div>
+    <div class="tiga">
+        <img src="gunung3.jpg" alt="Gambar3">
+    </div>
+</body>
+</html>
