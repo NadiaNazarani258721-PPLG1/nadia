@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelas X PPLG 3</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {  /* Variabel css guna menjaga kosisten desain keseluruhan*/
+            --bg:#F5F3EE;               /* Warna utama untuk area latar belakang halaman */
+            --fg:#1a1a1a;               /* Warna teks utama */
+            --muted:#64748B;            /* Warna teks yang redup */
+            --accent:#0284C7;           /* warna identitras atau penekanan utama (hijau) */
+            --accent-dark:#0C4A6E;      /* Versi warna gelap dari aksen */
+            --accent-light:#D6F0E6;     /* Versi terang dari warna aksen untuk latar belakang elemen kecil */
+            --warm:#C27830;             /* Untuk memberikkan kesan hangat */
+            --card:#fff;                /* Warna khusus untuk elemen berbentuk kotak atau kartu */
+            --border:#E2DED5;           /* Warna untuk garis pembatas antar elemen */
+            --radius:12px;                /* Ukuran lengkungan pada tiap sudut kotak */
+        }
+
+        *,*::before,*::after {  /* Guna untuk menyisipkan sesuatu tepat sebelum dan sesuadah isi dari sebuah elemen */
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        html {
+            scroll-behavior:smooth;
+            scroll-padding-top:64px;
+        }
+
+        body {
+            font-family:'Plus Jakarta Sans',sans-serif;
+            background:var(--bg);  /* warna background sesuai dengan warna yang telah diatur pada variabl */
+            color:var(--fg);
+            line-height:1.6;
+            font-size:14px;
+        }
+
+        h1,h2,h3,h4 {
+            font-family:'Outfit',sans-serif;
+            line-height:1.2;
+        }
+
+        /* Menu navigasi */
+        nav {   /* Menu yang menmpel */
+            position:sticky;
+            top:0;
+            z-index:100;
+            background:rgba(245,243,238,.85);
+            backdrop-filter:blur(12px);
+            border-bottom:1px solid var(--border);
+        }
+        .nav-in {   /* Isi yang rapih di tengah */
+            max-width:900px;
+            margin:0 auto;
+            padding:0 20px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            height:60px;
+        }
+        .brand {   /* Logo yang menonjol */
+            display:flex;
+            align-items:center;
+            gap:8px;
+            text-decoration:
+            none;color:var(--fg);
+            font-family:'Outfit';
+            font-weight:800;
+            font-size:16px;
+        }
+        .brand i {   /* Guna mengatur ikon di sebelah nama brand */
+            width:32px;
+            height:32px;
+            background:var(--accent);
+            color:#fff;
+            border-radius:8px;
+            display:grid;
+            place-items:center;
+            font-size:13px;
+        }
+        .brand span {   /* Guna memberikan warna beda pada sebagian nama brand */
+            color:var(--accent)
+        }
+        .nav-links {   /* wadah kelompok menu */
+            display:flex;
+            gap:2px;         /* untuk memberikan sedikit jarak antar mennu supaya tidak terlalu berdekatan */
+            list-style:none;
+        }
+        .nav-links a {    /* Gaya tombol menu */
+            text-decoration:none;
+            color:var(--muted);
+            font-size:13px;
+            font-weight:500;
+            padding:7px 14px;
+            border-radius:6px;
+            transition:.2s;
+        }
+        .nav-links a:hover {    /* Interaksi saat disentuh */
+            color:var(--accent);
+            background:var(--accent-light);
+        }
+
+        /* Pengatur tata letak dan gaya tulisan agar halaman web tidak berantakan */
+        section {    /* wadah utama */
+            max-width:900px;
+            margin:0 auto;
+            padding:40px 20px;
+        }
+        .label {    /* keterangan kecil di atas judul */
+            font-size:11px;
+            font-weight:700;
+            color:var(--accent);
+            text-transform:uppercase;    /* pengubah semua huruf menjadi otomatis huruf kapital */
+            letter-spacing:1px;          /* jarak antar huruf */
+            margin-bottom:6px;
+        }
+        .title {   /* pengatur untuk judul utama */
+            font-size:26px;
+            font-weight:800;
+            letter-spacing:-.5px;
+            margin-bottom:24px;
+        }
+
+        /* Hero section sebagai pengatur bagian paling atas dari sebuah website */
+        .hero {  /* Struktur utama */
+            padding:44px 20px 36px;
+            display:flex;
+            align-items:center;
+            gap:32px;
+            max-width:900px;
+            margin:0 auto;
+        }
+        .hero h1 {   /* guna mengatur gaya visual pada judul utama */
+            font-size:38px;
+            font-weight:800;
+            letter-spacing:-1px;
+        }
+        .hero h1 em {
+            font-style:normal;
+            background:linear-gradient(135deg,var(--accent),#0B251E);  /* untuk memberikan warna gradasi pada teks yang berada di dalam tag em */
+            -webkit-background-clip:text;         /* memerintahkan browser untuk memotong (clip) background tersebut agar hanya muncul di dalam siluet huruf saja, bukan di seluruh kotak. */
+            -webkit-text-fill-color:transparent;  /* berfungsi untuk membuang warna asli teks. */
+        }
+        .hero p { 
+            color:var(--muted);
+            margin:10px 0 18px;
+            max-width:420px;
+        }
+        .hero-stats {     /* Data angka */
+            display:flex;
+            gap:28px;
+        }
+        .hero-stats b {     
+            display:block;
+            font-family:'Outfit';
+            font-size:24px;color:var(--accent);
+        }
+        .hero-stats small {   
+            font-size:11px;
+            color:var(--muted);
+        }
+        .hero-card {       /* Guna membuat kotak kecil yang melayang di samping teks */
+            flex-shrink:0;
+            background:var(--card);
+            border:1px solid var(--border);
+            border-radius:var(--radius);
+            padding:22px;width:220px;
+            box-shadow:0 6px 24px rgba(0,0,0,.06);
+        }
+        .hero-card::before {     /* Membuat garis dekoratif berwarna (gradasi) di bagian paling atas kartu.  */
+            content:'';     /* berfungsi sebagai "pemicu" agar browser merender elemen tersebut. */
+            display:block;
+            height:3px;
+            background:linear-gradient(90deg,var(--accent),var(--warm));
+            border-radius:var(--radius) var(--radius) 0 0;
+        }
+        .hero-card h4 {
+            font-size:14px;
+            margin-bottom:12px;
+        }
+        .hero-card h4 i {
+            color:var(--accent);
+            margin-right:6px;
+        }
+        .hc-row {      /* Mengatur item daftar di dalam kartu */
+            display:flex;
+            justify-content:space-between;
+            padding:7px 0;
+            border-bottom:1px solid var(--border);
+            font-size:12.5px;
+        }
+        .hc-row:last-child {    /* Menghapus garis bawah pada baris terakhir agar tampilan lebih rapi.*/
+            border: none;
+        }
+        .hc-row .v {
+            font-weight:600
+        }
+
+        /* Jadwal Pelajran */
+        .tbl-wrap {     /* Pembungkus tabel */
+            background:var(--card);
+            border:1px solid var(--border);
+            border-radius:var(--radius);
+            overflow:hidden;
+        }
+        table {      /* Mengatur properti dasar elemen tabel. */
+            width:100%;
+            border-collapse:collapse;
+            font-size:13px;
+        }
+        thead {     /* Memberikan identitas kuat pada judul kolom. */
+            background:var(--accent);
+        }
+        thead th {
+            color:#fff;
+            font-weight:600;
+            padding:12px 14px;
+            text-align:left;
+            font-size:12px;
+            text-transform:uppercase;
+            letter-spacing:.3px;
+        }
+        thead th:first-child {    /* khusus untuk kolom pertama */
+            width:60px;
+            text-align:center;
+        }  
+        td {       /* mengatur tampilan isi jadwal */
+            padding:11px 14px
+        }
+        tr:not(:last-child) td {     /* Memberikan garis bawah pada setiap baris kecuali baris terakhir */
+            border-bottom:1px solid var(--border);
+        }
+        tbody tr:hover {
+            background:var(--accent-light);
+        }
+        td:first-child {
+            text-align:center;
+            font-weight:700;
+            color:var(--muted);
+            font-size:11px;
+            background:var(--bg);
+        }
+        .guru {     /* Menampilkan keterangan sekunder. */
+            font-size:11px;
+            color:var(--muted);
+            margin-top:1px;
+        }
+        .break td {    /* Menampilkan baris khusus untuk jeda atau istirahat */
+            background:#FFF3E6;
+            color:var(--warm);
+            text-align:center;
+            font-weight:600;
+            font-size:11px;
+            letter-spacing:.4px;
+            padding:8px;
+            border-bottom:1px solid rgba(194,120,48,.15)!important;   /* important=instruksi paksa */
+        }
+
+        /* Jadwal Piket */
+        .piket {
+            display:grid;
+            grid-template-columns:repeat(5,1fr);    /* Membuat masing masing kolom yang sama rata lebarnya (5 hari) */
+            gap:10px;     /* jarak antar kartu jadwal */
+        }
+        .pk {        /* desain kartu hari */
+            background:var(--card);
+            border:1px solid var(--border);
+            border-radius:var(--radius);
+            padding:18px 12px;
+            text-align:center;
+            transition:.25s;
+        }
+        .pk:hover {       /* Efek Animasi Saat Kartu Disentuh */
+            transform:translateY(-3px);      /* Mengangkat kartu sedikit ke atas sebesar 3 piksel saat disentuh */
+            box-shadow:0 6px 20px rgba(0,0,0,.06);     /* efek bayangan lembut dibawah kartu untuk kesan "melayang" */
+        }
+        .pk-day {      /* label nama hari */
+            font-size:11px;
+            font-weight:700;
+            text-transform:uppercase;
+            letter-spacing:.6px;
+            padding:4px 10px;
+            border-radius:20px;
+            display:inline-block;
+            margin-bottom:12px;
+        }
+        .pk:nth-child(1) .pk-day {   /* memberikan 5 warna yang berbeda agar tidak monoton */ 
+            background:#D1FAE5;
+            color:#059669;
+        }
+        .pk:nth-child(2) .pk-day {
+            background:#CFFAFE;
+            color:#0891B2;
+        }
+        .pk:nth-child(3) .pk-day {
+            background:#FFF3E6;
+            color:var(--warm);
+        }
+        .pk:nth-child(4) .pk-day {
+            background:#EDE9FE;
+            color:#7C3AED;
+        }
+        .pk:nth-child(5) .pk-day {
+            background:#FEE2E2;
+            color:#DC2626;
+        }
+        .pk li {    /* mengatur tampilan baris-baris jadwal pelajran */
+            list-style:none;
+            font-size:12.5px;
+            padding:5px 8px;
+            background:var(--bg);
+            border-radius:6px;
+            margin-bottom:4px;
+        }
+        .pk::before {         /* garis horizontal tebal di bagian paling atas kartu */
+            content:'';
+            display:block;
+            height:3px;
+            border-radius:var(--radius) var(--radius) 0 0;
+            margin:-18px -12px 14px;
+        }
+        .pk:nth-child(1)::before {
+            background:#059669;
+        }
+        .pk:nth-child(2)::before {
+            background:#0891B2;
+        }
+        .pk:nth-child(3)::before {
+            background:var(--warm);
+        }
+        .pk:nth-child(4)::before {
+            background:#7C3AED;
+        }
+        .pk:nth-child(5)::before {
+            background:#DC2626;
+        }
+
+        /* Struktur Pengurus Kelas */
+        .org {   
+            background:var(--card);
+            border:1px solid var(--border);
+            border-radius:var(--radius);
+            padding:36px 24px;
+            display:flex;
+            flex-direction:column;     /* isi disusun vertikal */
+            align-items:center;
+            gap:20px;
+        }
+        .org-box {     /* Kotak untuk tiap anggota pengurus */
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            gap:4px;
+            text-align:center;
+        }
+        .org-av {      /* Foto profil dasar */
+            width:52px;
+            height:52px;
+            border-radius:12px;
+            display:grid;
+            place-items:center;     /* untuk memaksa avatar tepat di tengah tengah kotak */
+            color:#fff;
+            font-size:20px;
+        }
+        .org-role {       /* teks jabatan dan nama */
+            font-size:10px;
+            font-weight:700;
+            text-transform:uppercase;
+            letter-spacing:.5px;
+        }
+        .org-box h4 {     /* Ukuran teks untuk Nama Pengurus */
+            font-size:13.5px;
+        }
+        .org-box p {      /* mengatur teks tambahan atau deskripsi */
+            font-size:11.5px;
+            color:var(--muted);
+        }
+        .g1 {         /* Style khusus untuk pengurus utama */
+            background:linear-gradient(135deg,var(--accent),#10B981);    /* warna gradasi */
+            box-shadow:0 3px 12px rgba(14,124,95,.3);
+            width:60px;
+            height:60px;
+            font-size:24px;
+            border-radius:14px;
+        }
+        .g1+.org-role {    /* Mengubah warna tulisan jabatan untuk setelahnya */
+            color:var(--accent);
+        }
+        .g2 {     /* Style warna lain untuk pengurus lain. */
+            background:linear-gradient(135deg,var(--warm),#E8943A);
+            box-shadow:0 3px 10px rgba(194,120,48,.25);
+        }
+        .g2+.org-role {
+            color:var(--warm);
+        }
+        .g3 {       /* Style avatar ukuran kecil dengan warna biru */
+            background:linear-gradient(135deg,#0891B2,#06B6D4);
+            box-shadow:0 3px 10px rgba(8,145,178,.2);
+            width:44px;
+            height:44px;
+            font-size:16px;
+            border-radius:10px;
+        }
+        .g3+.org-role {
+            color:#0891B2;
+        }
+        .g4 {   
+            background:linear-gradient(135deg,#7C3AED,#A78BFA);
+            box-shadow:0 3px 10px rgba(124,58,237,.2);
+            width:44px;
+            height:44px;
+            font-size:16px;
+            border-radius:10px;
+        }
+        .g4+.org-role {
+            color:#7C3AED;
+        }
+        .line-v {      /* Membuat garis vertikal penghubung struktur organisasi */
+            width:2px;
+            height:20px;
+            background:var(--border);
+        }
+        .line-h {        /* Membuat garis horizontal penghubung */
+            width:80%;
+            max-width:600px;
+            height:2px;
+            background:var(--border);
+        }
+        .row {         /* Menyusun anggota dalam satu baris */
+            display:flex;
+            justify-content:space-around;
+            width:100%;
+            max-width:600px;
+        }
+        .col {       /* Menyusun isi secara vertikal dalam kolom */
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            gap:16px;
+        }
+
+        
+        /* Tabel Absen Siswa */
+        .table-box {
+            width:550px;
+            margin:auto;
+            background:white;
+            padding:20px;
+            border-radius:12px;
+            box-shadow:0 4px 12px rgba(0,0,0,0.08);
+            border:1px solid var(--border);
+        }
+        .table-box table {
+            width:100%;
+            border-collapse:collapse;
+        }
+        .table-box th {
+            background:#0C4A6E;
+            color:white;
+            padding:10px;
+            font-size:14px;
+            border:1px solid #cfcfcf;
+        }
+        .table-box td {
+            padding:9px 12px;
+            font-size:13px;
+            border:1px solid #d6d6d6;
+        }
+        .table-box tbody tr:hover {
+            background:#eefaf5;
+        }
+        .table-box td:nth-child(1) {
+            text-align:center;
+            width:60px;
+            font-weight:bold;
+        }
+        .table-box td:nth-child(3) {
+            text-align:center;
+            width:120px;
+        }
+
+        footer {      /* Mengatur tampilan bagian footer (bagian bawah website) */
+            background:var(--fg);
+            color:rgba(255,255,255,.45);
+            text-align:center;
+            padding:24px;
+            font-size:12px;
+        }
+        footer b {      /* mengatur teks bold atau tag b pada footer */
+            color:rgba(255,255,255,.8);
+        }
+
+
+        @keyframes up {    /* Membuat animasi muncul dari bawah ke atas */
+            from {      
+                opacity:0;        /* Membuat elemen tidak terlihat (transparan) */
+                transform:translateY(16px);     /* menggeser elemen ke bawah sejau 16 piksel */
+            }
+            to {       /* menentukan kondisi akhir animasi */
+                opacity:1;       /* membuat elemen terlihat penuh */  
+                transform:translateY(0);     /* Mengembalikan posisi elemen ke tempat normal */
+            }
+        }
+        .hero,.title,.tbl-wrap,.piket,.org {
+            animation:up .5s ease both;    /* Memberikan animasi up ke beberapa bagian website */
+        }
+
+
+        @media(max-width:700px){     /* Menjalankan CSS khusus jika lebar layar 700px ke bawah */
+            .hero {
+                flex-direction:column;
+                text-align:center;
+                padding-top:32px;
+            }
+            .hero p {
+                margin-left:auto;
+                margin-right:auto;
+            }
+            .hero-stats {
+                justify-content:center;
+            }
+            .piket {
+                grid-template-columns:repeat(2,1fr);
+            }
+            .piket .pk:nth-child(5) {
+                grid-column:1/-1;
+                max-width:50%;
+                justify-self:center;}
+            .row {
+                flex-wrap:wrap;
+                gap:24px;
+                justify-content:center;
+            }
+            .line-h {
+                display:none;
+            }
+            .guru {
+                display:none;
+            }
+            .nav-links a {
+                padding:7px 10px;
+                font-size:15px;
+            }
+            .nav-links a span {
+                display:none;
+            }
+            .table-box {
+                width:100%;
+                overflow-x:auto;
+            }
+            .table-box table {
+                min-width:500px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <nav>
+    <div class="nav-in">
+        <a href="#" class="brand"><i class="fa-solid fa-school"></i> Kelas <span>X PPLG 3 </span></a>
+        <ul class="nav-links">
+            <li><a href="#jadwal"><i class="fa-solid fa-calendar"></i> <span>Jadwal Pelajaran</span></a></li>
+            <li><a href="#piket"><i class="fa-solid fa-broom"></i> <span>Jadwal Piket</span></a></li>
+            <li><a href="#struktur"><i class="fa-solid fa-sitemap"></i> <span>Struktur Pengurus Kelas</span></a></li>
+            <li><a href="#absen"><i class="fa-solid fa-clipboard-user"></i><span>Data Absen Siswa</span></a></li>
+        </ul>
+    </div>
+    </nav>
+
+<header class="hero">
+    <div>
+        <h1>Kelas <em>X PPLG 3 </em></h1>
+        <p>SMK N 1 Kandeman — Tahun Ajaran 2025/2026. Halaman informasi berisi jadwal pelajaran, jadwal piket, pengurus kelas, dan daftar absen siswa.</p>
+        <div class="hero-stats">
+            <div><b>36</b><small>Siswa</small></div>
+            <div><b>13</b><small>Mapel</small></div>
+            <div><b>6</b><small>Pengurus</small></div>
+        </div>
+    </div>
+    <div class="hero-card">
+        <h4><i class="fa-solid fa-info-circle"></i>Info Kelas</h4>
+        <div class="hc-row"><span>Wali Kelas</span><span class="v" style="text-align: right;">Arkananta Dewantoro, S.Pd.</span></div>
+        <div class="hc-row"><span>Ruang</span><span class="v" style="text-align: right;">21</span></div>
+        <div class="hc-row"><span>Siswa</span><span class="v" style="text-align: right;">14 L, 22 P</span></div>
+        <div class="hc-row"><span>Motto</span><span class="v" style="text-align: right;">Langkah Kecil Untuk Dampak Besar</span></div>
+    </div>
+</header>
+
+<section id="jadwal">
+    <div class="label">Jadwal Pelajaran</div>
+    <h2 class="title">X PPLG 3</h2>
+    <div class="tbl-wrap" overflow-x: auto;>
+        <table>
+            <thead>
+                <tr>
+                    <th>Jam</th>
+                    <th>Senin</th>
+                    <th>Selasa</th>
+                    <th>Rabu</th>
+                    <th>Kamis</th>
+                    <th>Jumat</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>07:00<br>07:45</td>
+                    <td>Matematika<div class="guru">Dwi Herni Noviyanti, S.Pd</div></td>
+                    <td>PABP<div class="guru">Laely Hilalliyah, S.Fil.I, M.Pd</div></td>
+                    <td>RPL-Dasar PPLG<div class="guru">Mukti Widodo, S.T (RPL-GV)</div></td>
+                    <td>PJOK<div class="guru">Drs. Budi Setiyadi</div></td>
+                    <td>Sejarah<div class="guru">Wahyu Dwi Yulianti, S.Pd</div></td>
+                </tr>
+                <tr>
+                    <td>07:45<br>08:30</td>
+                    <td>Bahasa Inggris<div class="guru">Yuli Rahayu, S.Pd</div></td>
+                    <td>PABP<div class="guru">Laely Hilalliyah, S.Fil.I, M.Pd</div></td>
+                    <td>RPL-Dasar PPLG<div class="guru">Mukti Widodo, S.T (RPL-GV)</div></td>
+                    <td>PJOK<div class="guru">Drs. Budi Setiyadi</div></td>
+                    <td>Sejarah<div class="guru">Wahyu Dwi Yulianti, S.Pd</div></td>
+                </tr>
+                <tr>
+                    <td>08:30<br>09:15</td>
+                    <td>Bahasa Jawa<div class="guru">Rinta Dwi Jayanti, S.Pd</div></td>
+                    <td>Seni Budaya<div class="guru">Sigit Purnomo, S.Pd</div></td>
+                    <td>RPL-Dasar PPLG<div class="guru">Mukti Widodo, S.T (RPL-GV)</div></td>
+                    <td>PJOK<div class="guru">Drs. Budi Setiyadi</div></td>
+                    <td>Matematika<div class="guru">Dwi Herni Noviyanti, S.Pd</div></td>
+                </tr>
+                <tr class="break"><td colspan="6"><i class="fa-solid fa-mug-hot"></i> Istirahat 09:15 – 09:30</td></tr>
+                <tr>
+                    <td>09:30<br>10:15</td>
+                    <td>Informatika<div class="guru">Riris Yuniaratri, S.Pd (RPL-Lab RPL)</div></td>
+                    <td>Seni Budaya<div class="guru">Sigit Purnomo, S.Pd</div></td>
+                    <td>RPL-Dasar PPLG<div class="guru">Mukti Widodo, S.T (RPL-GV)</div></td>
+                    <td>Bahasa Indonesia<div class="guru">Chanifah Ulfah, S.Pd</div></td>
+                    <td>Koding & Kecerdasan Artifisial<div class="guru">Riris Yuniaratri, S.Pd (Lab Kom 3)</div></td>
+                </tr>
+                <tr>
+                    <td>10:15<br>11:00</td>
+                    <td>Informatika<div class="guru">Riris Yuniaratri, S.Pd (RPL-Lab RPL)</div></td>
+                    <td>PIPAS<div class="guru">Satria Nur Karim Amrullah, S.Pd</div></td>
+                    <td>RPL-Dasar PPLG<div class="guru">Mukti Widodo, S.T (RPL-GV)</div></td>
+                    <td>Bahasa Indonesia<div class="guru">Chanifah Ulfah, S.Pd</div></td>
+                    <td>Koding & Kecerdasan Artifisial<div class="guru">Riris Yuniaratri, S.Pd (Lab Kom 3)</div></td>
+                </tr>
+                <tr>
+                    <td>11:00<br>11:45</td>
+                    <td>Pendidikan Pancasila<div class="guru">Maria Ulfa, S.Pd</div></td>
+                    <td>PIPAS<div class="guru">Satria Nur Karim Amrullah, S.Pd</div></td>
+                    <td>RPL-Dasar PPLG<div class="guru">Mukti Widodo, S.T (RPL-GV)</div></td>
+                    <td>Bahasa Indonesia<div class="guru">Chanifah Ulfah, S.Pd</div></td>
+                    <td>Sejarah<div class="guru">Wahyu Dwi Yulianti, S.Pd</div></td>
+                </tr>
+                <tr class="break"><td colspan="6"><i class="fa-solid fa-mug-hot"></i> Istirahat 11.45 – 12:30</td></tr>
+                </tr>
+                <tr>
+                    <td>12:30<br>13:15</td>
+                    <td>Matematika<div class="guru">Dwi Herni Noviyanti, S.Pd</div></td>
+                    <td>PABP<div class="guru">Laely Hilalliyah, S.Fil.I, M.Pd</div></td>
+                    <td>RPL-Dasar PPLG<div class="guru">Mukti Widodo, S.T (RPL-GV)</div></td>
+                    <td>Bahasa Indonesia<div class="guru">Chanifah Ulfah, S.Pd</div></td>
+                    <td>Sejarah<div class="guru">Wahyu Dwi Yulianti, S.Pd</div></td>
+                </tr>
+                <tr>
+                    <td>13:15<br>14:00</td>
+                    <td>Bahasa Inggris<div class="guru">Yuli Rahayu, S.Pd</div></td>
+                    <td>Seni Budaya<div class="guru">Sigit Purnomo, S.Pd</div></td>
+                    <td>RPL-Dasar PPLG<div class="guru">Mukti Widodo, S.T (RPL-GV)</div></td>
+                    <td>PJOK<div class="guru">Drs. Budi Setiyadi</div></td>
+                    <td>Matematika<div class="guru">Dwi Herni Noviyanti, S.Pd</div></td>
+                </tr>
+                <tr>
+                    <td>14:00<br>14:45</td>
+                    <td>Informatika<div class="guru">Riris Yuniaratri, S.Pd (RPL-Lab RPL)</div></td>
+                    <td>PIPAS<div class="guru">Satria Nur Karim Amrullah, S.Pd</div></td>
+                    <td>RPL-Dasar PPLG<div class="guru">Mukti Widodo, S.T (RPL-GV)</div></td>
+                    <td>Bahasa Indonesia<div class="guru">Chanifah Ulfah, S.Pd</div></td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>14:45<br>15:30</td>
+                    <td>Pendidikan Pancasila<div class="guru">Maria Ulfa, S.Pd</div></td>
+                    <td>PIPAS<div class="guru">Satria Nur Karim Amrullah, S.Pd</div></td>
+                    <td>RPL-Dasar PPLG<div class="guru">Mukti Widodo, S.T (RPL-GV)</div></td>
+                    <td>Bahasa Jawa<div class="guru">Rinta Dwi Jayanti, S.Pd</div></td>
+                    <td>-</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section id="piket">
+    <div class="label">Jadwal Piket</div>
+    <h2 class="title">X PPLG 3</h2>
+    <div class="piket">
+        <div class="pk">
+            <div class="pk-day">Senin</div>
+                <ul>
+                    <li>Alya Zahra</li>
+                    <li>Citra Dewi</li>
+                    <li>Elsa Maharani</li>
+                    <li>Hana Putri</li>
+                    <li>Jasmine Aulia</li>
+                    <li>Umi Kalsum</li>
+                    <li>Bima Saputra</li>
+                    <li>Dimas Pratama</li>
+                </ul>
+        </div>
+
+        <div class="pk">
+            <div class="pk-day">Selasa</div>
+                <ul>
+                    <li>Nadia Kusuma</li>
+                    <li>Putri Amelia</li>
+                    <li>Wulan Sari</li>
+                    <li>Dina Mariana</li>
+                    <li>Fitri Handayani</li>
+                    <li>Salsa Azzahra</li>
+                    <li>Galih Ramadhan</li>
+                    <li>Irfan Hakim</li>
+                </ul>
+        </div>
+
+        <div class="pk">
+            <div class="pk-day">Rabu</div>
+                <ul>
+                    <li>Rina Oktavia</li>
+                    <li>Tiara Anindya</li>
+                    <li>Melati Ayunda</li>
+                    <li>Larissa Putri</li>
+                    <li>Keisya Maharani</li>
+                    <li>Kevin Ardiansyah</li>
+                    <li>Maulana Rizki</li>
+                </ul>
+        </div>
+
+        <div class="pk">
+            <div class="pk-day">Kamis</div>
+                <ul>
+                    <li>Syifa Rahma</li>
+                    <li>Zahra Amelia</li>
+                    <li>Annisa Putri</li>
+                    <li>Fira Lestari</li>
+                    <li>Oscar Wijaya</li>
+                    <li>Rafi Aditya</li>
+                    <li>Vino Mahendra</li>
+                </ul>
+        </div>
+
+        <div class="pk">
+            <div class="pk-day">Jumat</div>
+                <ul>
+                    <li>Amanda Safitri</li>
+                    <li>Nabila Aulia</li>
+                    <li>Intan Permata</li>
+                    <li>Dea Maharani</li>
+                    <li>Yusuf Ibrahim</li>
+                    <li>Taufik Hidayat</li>
+                    <li>Arif Budiman</li>
+                    <li>Bayu Pratama</li>
+                </ul>
+        </div>
+    </div>
+</section>
+
+<section id="struktur">
+    <div class="label">Struktur Pengurus Kelas</div>
+    <h2 class="title">X PPLG 3</h2>
+    <div class="org">
+        <!-- TINGKAT 1: WALI KELAS -->
+<div class="org-box">
+    <div class="org-av g1"><i class="fa-solid fa-user-tie"></i></div>
+    <div class="org-role">Wali Kelas</div>
+    <h4>Arkananta Dewantoro, S.Pd.</h4>
+</div>
+
+<div class="line-v"></div><div class="line-h"></div>
+
+<!-- TINGKAT 2: KETUA & WAKIL KELAS -->
+<div class="row">
+    <div class="col">
+        <div class="org-box">
+            <div class="org-av g1"><i class="fa-solid fa-user-tie"></i></div>
+            <div class="org-role">Ketua Kelas</div>
+            <h4>Rafi Aditya</h4>
+        </div>
+    </div>
+    <div class="col">
+        <div class="org-box">
+            <div class="org-av g2"><i class="fa-solid fa-user-shield"></i></div>
+            <div class="org-role">Wakil Ketua</div>
+            <h4>Alya Zahra</h4>
+        </div>
+    </div>
+</div>
+
+<div class="line-v"></div><div class="line-h"></div>
+
+<!-- TINGKAT 3: BENDAHARA 1 & 2 -->
+<div class="row">
+    <div class="col">
+        <div class="org-box">
+            <div class="org-av g3"><i class="fa-solid fa-coins"></i></div>
+            <div class="org-role">Bendahara 1</div>
+            <h4>Hana Putri</h4>
+        </div>
+    </div>
+    <div class="col">
+        <div class="org-box">
+            <div class="org-av g3"><i class="fa-solid fa-coins"></i></div>
+            <div class="org-role">Bendahara 2</div>
+            <h4>Dimas Pratama</h4>
+        </div>
+    </div>
+</div>
+
+<div class="line-v"></div><div class="line-h"></div>
+
+<!-- TINGKAT 4: SEKRETARIS 1 & 2 -->
+<div class="row">
+    <div class="col">
+        <div class="org-box">
+            <div class="org-av g3"><i class="fa-solid fa-file-pen"></i></div>
+            <div class="org-role">Sekretaris 1</div>
+            <h4>Nadia Kusuma</h4>
+        </div>
+    </div>
+    <div class="col">
+        <div class="org-box">
+            <div class="org-av g3"><i class="fa-solid fa-file-pen"></i></div>
+            <div class="org-role">Sekretaris 2</div>
+            <h4>Galih Ramadhan</h4>
+        </div>
+    </div>
+</div>
+    </div>
+</section>
+
+
+<section id="absen">
+    <div class="label">Data Absen</div>
+    <h2 class="title">Daftar Absen X PPLG 3</h2>
+
+    <div class="table-box">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Siswa</th>
+                    <th>Jenis Kelamin</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr><td>1</td><td>Alya Zahra</td><td>Perempuan</td></tr>
+                <tr><td>2</td><td>Amanda Safitri</td><td>Perempuan</td></tr>
+                <tr><td>3</td><td>Annisa Putri</td><td>Perempuan</td></tr>
+                <tr><td>4</td><td>Arif Budiman</td><td>Laki-laki</td></tr>
+                <tr><td>5</td><td>Bayu Pratama</td><td>Laki-laki</td></tr>
+                <tr><td>6</td><td>Bima Saputra</td><td>Laki-laki</td></tr>
+                <tr><td>7</td><td>Citra Dewi</td><td>Perempuan</td></tr>
+                <tr><td>8</td><td>Dea Maharani</td><td>Perempuan</td></tr>
+                <tr><td>9</td><td>Dimas Pratama</td><td>Laki-laki</td></tr>
+                <tr><td>10</td><td>Dina Mariana</td><td>Perempuan</td></tr>
+                <tr><td>11</td><td>Elsa Maharani</td><td>Perempuan</td></tr>
+                <tr><td>12</td><td>Fira Lestari</td><td>Perempuan</td></tr>
+                <tr><td>13</td><td>Fitri Handayani</td><td>Perempuan</td></tr>
+                <tr><td>14</td><td>Galih Ramadhan</td><td>Laki-laki</td></tr>
+                <tr><td>15</td><td>Hana Putri</td><td>Perempuan</td></tr>
+                <tr><td>16</td><td>Intan Permata</td><td>Perempuan</td></tr>
+                <tr><td>17</td><td>Irfan Hakim</td><td>Laki-laki</td></tr>
+                <tr><td>18</td><td>Jasmine Aulia</td><td>Perempuan</td></tr>
+                <tr><td>19</td><td>Keisya Maharani</td><td>Perempuan</td></tr>
+                <tr><td>20</td><td>Kevin Ardiansyah</td><td>Laki-laki</td></tr>
+                <tr><td>21</td><td>Larissa Putri</td><td>Perempuan</td></tr>
+                <tr><td>22</td><td>Maulana Rizki</td><td>Laki-laki</td></tr>
+                <tr><td>23</td><td>Melati Ayunda</td><td>Perempuan</td></tr>
+                <tr><td>24</td><td>Nabila Aulia</td><td>Perempuan</td></tr>
+                <tr><td>25</td><td>Nadia Kusuma</td><td>Perempuan</td></tr>
+                <tr><td>26</td><td>Oscar Wijaya</td><td>Laki-laki</td></tr>
+                <tr><td>27</td><td>Putri Amelia</td><td>Perempuan</td></tr>
+                <tr><td>28</td><td>Rafi Aditya</td><td>Laki-laki</td></tr>
+                <tr><td>29</td><td>Rina Oktavia</td><td>Perempuan</td></tr>
+                <tr><td>30</td><td>Salsa Azzahra</td><td>Perempuan</td></tr>
+                <tr><td>31</td><td>Syifa Rahma</td><td>Perempuan</td></tr>
+                <tr><td>32</td><td>Taufik Hidayat</td><td>Laki-laki</td></tr>
+                <tr><td>33</td><td>Tiara Anindya</td><td>Perempuan</td></tr>
+                <tr><td>34</td><td>Umi Kalsum</td><td>Perempuan</td></tr>
+                <tr><td>35</td><td>Vino Mahendra</td><td>Laki-laki</td></tr>
+                <tr><td>36</td><td>Wulan Sari</td><td>Perempuan</td></tr>
+            </tbody>
+        </table>
+
+    </div>
+</section>
+<footer><b>Kelas X PPLG 3</b> — SMK N 1 Kandeman &nbsp;|&nbsp; Wali Kelas: Arkananta Dewantoro, S.Pd.</footer>
+
+
+</body>
+</html>
